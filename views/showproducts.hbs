@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 style="text-align: center;">Lista de productos</h1>
+            <hr class="colorgraph">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th class="th-sm"> Nombre</th>
+                        <th class="th-sm"> Precio</th>
+                        <th class="th-sm"> Imagen</th>
+                        <th class="th-sm"> Categoría</th>
+                        <th class="th-sm"> Descripción</th>
+                        <th class="th-sm">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#products}}
+                    <tr>
+                        <td>{{_id}}</td>
+                        <td>{{name}}</td>
+                        <td>{{price}}</td>
+                        <td>{{picture}}</td>
+                        <td>{{category}}</td>
+                        <td>{{description}}</td>
+                        <td>
+                            <form action="/api/product/{{_id}}" method="GET">
+                                <button type="submit" class="btn btn-primary">Editar</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/api/product/{{_id}}" method="GET">
+                                <button type="submit" class="btn btn-primary">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/products}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
